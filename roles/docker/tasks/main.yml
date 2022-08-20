@@ -30,7 +30,8 @@
   apt:
     name:
       - docker-ce
-  notify: 
+      - docker-compose-plugin
+  notify:
     - add_user_to_docker_group
     - restart_docker_daemon
   changed_when: yes

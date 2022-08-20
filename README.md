@@ -3,11 +3,13 @@
 自分がよく使うツール・ライブラリが全部入りの開発環境をプロビジョニングします
 
 - AWS CLI
+- ecspresso
 - Terraform
 - Docker CE
 
 ## Requirements
 
+- make
 - WSL2
 - ユーザー情報設定済みのUbuntu 
     - 動作確認済みディストリビューションは[動作確認済みディストリビューション](#動作確認済みディストリビューション)を参照
@@ -17,7 +19,7 @@
 ## 使い方
 
 ```
-git clone 
+git clone https://github.com/chilitreat/setup-wsl.git
 
 cd setup-wsl
 

@@ -18,6 +18,12 @@ chmod 600 ~/.ssh/authorized_keys
 sudo mv /etc/ansible/hosts /etc/ansible/hosts.bk
 sudo ln -s ./hosts /etc/ansible/hosts
 
+# install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.profile
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+sudo apt-get install -y build-essential
+
 # see: https://galaxy.ansible.com/andrewrothstein/terraform
 ansible-galaxy install  andrewrothstein.terraform
 # see: https://galaxy.ansible.com/christiangda/awscli
