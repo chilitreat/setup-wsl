@@ -1,0 +1,7 @@
+---
+- name: install ecspresso
+  become: false
+  homebrew: 
+    name: kayac/tap/ecspresso
+    path: /home/linuxbrew/.linuxbrew/bin/
+    state: present

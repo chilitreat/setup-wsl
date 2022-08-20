@@ -4,6 +4,7 @@
   gather_facts: True
   roles:
     - docker
+    - ecspresso
     - christiangda.awscli
     - andrewrothstein.terraform
   vars:
