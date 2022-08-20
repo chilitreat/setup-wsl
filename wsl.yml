@@ -1,0 +1,10 @@
+- name: wsl
+  become: true
+  hosts: all
+  gather_facts: True
+  roles:
+    - docker
+    - christiangda.awscli
+    - andrewrothstein.terraform
+  vars:
+    terraform_ver: 1.0.11

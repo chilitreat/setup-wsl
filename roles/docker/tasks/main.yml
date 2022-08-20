@@ -1,0 +1,38 @@
+---
+- name: apt update
+  apt:
+    update_cache: yes
+
+- name: install require packages
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+    state: present
+
+- name: add GPG key
+  ansible.builtin.apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: add repository in apt
+  ansible.builtin.apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
+    state: present
+
+- name: apt update
+  apt:
+    update_cache: yes
+
+- name: install docker
+  apt:
+    name:
+      - docker-ce
+  notify: 
+    - add_user_to_docker_group
+    - restart_docker_daemon
+  changed_when: yes
+
+- meta: flush_handlers
